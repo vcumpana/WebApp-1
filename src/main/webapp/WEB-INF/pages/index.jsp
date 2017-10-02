@@ -9,6 +9,7 @@
     </style>
 </head>
 <body>
+<h6>${message}</h6>
 <div align="center">
     <div style="width: 300px; height: 500px;">
         <form:form method="POST" action="login">
