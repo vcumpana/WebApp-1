@@ -9,14 +9,13 @@
     </style>
 </head>
 <body>
-<h6>${message}</h6>
 <div align="center">
     <div style="width: 300px; height: 500px;">
-        <form:form method="POST" action="login">
+        <form:form method="POST" action="/login">
             <div class="imgcontainer">
                 <img src="../resources/incognito.jpg" alt="Avatar" class="avatar">
             </div>
-            <h3 align="center" style="color:maroon;">Hi there! Log in, please</h3>
+            <h3 align="center" style="color:maroon;">${message}</h3>
 
             <div class="container" align="left">
                 <label>Username</label>
@@ -24,6 +23,11 @@
 
                 <label>Password</label>
                 <input type="password" name="password" required="required"/>
+
+                <label>Gender</label>
+                <p>
+                <input type="radio" name="gender" value="MALE" checked>Male
+                <input type="radio" name="gender" value="FEMALE">Female<br></p>
                 <button type="submit">Login</button>
             </div>
         </form:form>
