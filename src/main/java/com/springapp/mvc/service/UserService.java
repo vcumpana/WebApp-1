@@ -1,38 +1,34 @@
 package com.springapp.mvc.service;
 
-import com.springapp.mvc.datasource.UsersDatabaseImitation;
+import com.springapp.mvc.datasource.UserDao;
 import com.springapp.mvc.model.Gender;
 import com.springapp.mvc.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-
-import static com.springapp.mvc.datasource.UsersDatabaseImitation.*;
-import static com.springapp.mvc.model.Gender.*;
+import java.util.Optional;
 
 @Service
+@Transactional
 public class UserService {
 
     @Autowired
-    private UsersDatabaseImitation usersDatabaseImitation;
-
-    public boolean checkUser(User user) {
-        for(User u: getListOfUsers()) {
-            if (user.equals(u)) return true;
-        }
-        return false;
-    }
+    private UserDao userDao;
 
     public List<User> getAllUsers() {
-        return getListOfUsers();
+        return userDao.getListOfUsers();
     }
 
     public List<User> getAllByGender(Gender gender) {
-        return getAllUsers().stream()
-                .filter(user -> user.getGender() == gender)
-                .collect(Collectors.toList());
+        return userDao.getAllByGender(gender);
+    }
+
+    public Optional<User> getUserByName(String username) {
+        return userDao.getUserByName(username);
     }
 }

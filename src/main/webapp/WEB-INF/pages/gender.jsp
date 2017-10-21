@@ -7,7 +7,7 @@
 <body>
 <h2>Here are all our ${gender}:</h2>
 <c:forEach items="${list}" var="user">
-    <p>Name: ${user.name} | Password: ${user.password}</p>
+    <p>Name: ${user.username} | Password: ${user.password}</p>
 </c:forEach>
 </body>
 </html>

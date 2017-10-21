@@ -19,7 +19,7 @@
 
             <div class="container" align="left">
                 <label>Username</label>
-                <input type="text" name="name" required="required"/>
+                <input type="text" name="username" required="required"/>
 
                 <label>Password</label>
                 <input type="password" name="password" required="required"/>
