@@ -9,9 +9,15 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class UserController {
+	private static final String FEMALE="female";
+	private static final String MALE="male";
 
 	@Autowired
 	private UserService userService;
@@ -24,6 +30,7 @@ public class UserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String submit(Model model, @ModelAttribute("user") User user) {
+
 		if (userService.checkUser(user)) {
 			model.addAttribute(user);
 			return "redirect:/allusers";
@@ -34,8 +41,18 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/allusers", method = RequestMethod.GET)
-	public String showAllUsers(ModelMap model) {
-		model.addAttribute("users", userService.getAllUsers());
+	public String showAllUsers(ModelMap model, @RequestParam(value = "gender",required = false)String gender) {
+		List<User> users;
+		if(gender==null){
+			users=userService.getAllUsers();
+		}else if(gender.equals(FEMALE)){
+			users=userService.getAllGirls();
+		}else if(gender.equals(MALE)){
+			users=userService.getAllBoys();
+		}else {
+			users=userService.getAllUsers();
+		}
+		model.addAttribute("users", users);
 		return "welcome";
 	}
 }

@@ -12,8 +12,15 @@
 <h1>Hi, Welcome to our super-puper secret page!</h1>
 <br>
 <h2>Here are all our users:</h2>
+<a href="allusers?gender=female">Show Girls</a>
+<br>
+<a href="allusers?gender=male">Show Boys</a>
+<br>
+<a href="allusers">Show All</a>
+<br>
 <c:forEach items="${users}" var="user">
     <p>Name: ${user.name} | Password: ${user.password}</p>
 </c:forEach>
+
 </body>
 </html>
