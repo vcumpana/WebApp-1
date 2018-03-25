@@ -11,9 +11,9 @@
 <body>
 <h1>Hi, Welcome to our super-puper secret page!</h1>
 <br>
-<h2>Here are all our users:</h2>
+<h2>Here are all our ${genderName}:</h2>
 <c:forEach items="${users}" var="user">
-    <p>Name: ${user.name} | Password: ${user.password} | ${user.gender}</p>
+    <p>Name: ${user.name} | Password: ${user.password}</p>
 </c:forEach>
 </body>
 </html>
