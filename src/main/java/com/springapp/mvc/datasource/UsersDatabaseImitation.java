@@ -1,5 +1,6 @@
 package com.springapp.mvc.datasource;
 
+import com.springapp.mvc.model.Gender;
 import com.springapp.mvc.model.User;
 import org.springframework.stereotype.Repository;
 
@@ -11,9 +12,9 @@ public class UsersDatabaseImitation {
     private static List<User> listOfUsers = new ArrayList<>();
 
     static {
-        listOfUsers.add(new User("Mila Bezaliuc", "endava"));
-        listOfUsers.add(new User("Petru Covaliov", "endava"));
-        listOfUsers.add(new User("Maxim Ustimov", "endava"));
+        listOfUsers.add(new User("Mila Bezaliuc", "endava", Gender.Female));
+        listOfUsers.add(new User("Petru Covaliov", "endava", Gender.Male));
+        listOfUsers.add(new User("Maxim Ustimov", "endava", Gender.Male));
     }
 
     public static List<User> getListOfUsers() {

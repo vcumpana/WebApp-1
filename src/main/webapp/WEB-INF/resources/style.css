@@ -63,3 +63,28 @@ span.psw {
         width: 100%;
     }
 }
+
+/*Gender search link*/
+.link {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+
+a:link {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 3px 5px 3px 5px;
+    border: 1px solid #fff;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    border-color: orange;
+    color: orange;
+    transition: all 0.3s;
+}
