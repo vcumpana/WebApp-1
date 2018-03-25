@@ -23,7 +23,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String submit(Model model, @ModelAttribute("user") User user) {
+	public String submit(ModelMap model, @ModelAttribute("user") User user) {
 		if (userService.checkUser(user)) {
 			model.addAttribute(user);
 			return "redirect:/allusers";

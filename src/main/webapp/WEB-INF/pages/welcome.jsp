@@ -13,7 +13,7 @@
 <br>
 <h2>Here are all our users:</h2>
 <c:forEach items="${users}" var="user">
-    <p>Name: ${user.name} | Password: ${user.password}</p>
+    <p>Name: ${user.name} | Password: ${user.password} | ${user.gender}</p>
 </c:forEach>
 </body>
 </html>
