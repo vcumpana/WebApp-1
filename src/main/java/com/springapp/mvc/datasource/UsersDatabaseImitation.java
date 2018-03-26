@@ -23,4 +23,22 @@ public class UsersDatabaseImitation {
     public static void setListOfUsers(List<User> listOfUsers) {
         UsersDatabaseImitation.listOfUsers = listOfUsers;
     }
+
+    public static List<User> getListOfGirlsUsers() {
+        List<User> listOfGirls = new ArrayList<>();
+        for (User us : listOfUsers){
+            if (us.getGender().equals("female")) listOfGirls.add(us);
+        }
+
+        return listOfGirls;
+        }
+
+    public static List<User> getListOfBoysUsers() {
+        List<User> listOfBoys = new ArrayList<>();
+        for (User us : listOfUsers){
+            if (us.getGender().equals("male")) listOfBoys.add(us);
+        }
+
+        return listOfBoys;
+    }
 }

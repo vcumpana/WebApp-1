@@ -23,4 +23,10 @@ public class UserService {
     public List<User> getAllUsers() {
         return UsersDatabaseImitation.getListOfUsers();
     }
+
+    public List<User> getGirlUsers() { return UsersDatabaseImitation.getListOfGirlsUsers();
+    }
+
+    public  List<User> getBoysUsers() { return UsersDatabaseImitation.getListOfBoysUsers();
+    }
 }

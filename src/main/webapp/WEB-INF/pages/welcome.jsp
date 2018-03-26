@@ -11,9 +11,14 @@
 <body>
 <h1>Hi, Welcome to our super-puper secret page!</h1>
 <br>
-<h2>Here are all our users:</h2>
+<h2>Here are ${userFilter}  users:</h2>
 <c:forEach items="${users}" var="user">
-    <p>Name: ${user.name} | Password: ${user.password}</p>
+    <p>Name: ${user.name} | Password: ${user.password} | Gender: ${user.gender}</p>
 </c:forEach>
+
+<h2>View users by gender:</h2>
+<a href="/allusers/girls">Female</a><br/><br/>
+<a href="/allusers/boys">Male</a><br/><br/>
+
 </body>
 </html>
