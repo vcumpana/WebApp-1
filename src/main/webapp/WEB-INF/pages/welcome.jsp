@@ -11,9 +11,18 @@
 <body>
 <h1>Hi, Welcome to our super-puper secret page!</h1>
 <br>
-<h2>Here are all our users:</h2>
+<h2>Here are ${face} users:</h2>
 <c:forEach items="${users}" var="user">
-    <p>Name: ${user.name} | Password: ${user.password}</p>
+    <p>Name: ${user.name} | Password: ${user.password} | Gender: ${user.gender}</p>
 </c:forEach>
+<form:form method="GET" action="welcome">
+    <div class="container" align="left">
+        <label>Gender</label><br/>
+        <input type="radio" name="gender" value="MALE" required="required"/>MALE<br />
+        <input type="radio" name="gender" value="FEMALE" required="required"/>FEMALE<br />
+        <input type="radio" name="gender" value="" required="required"/>ALL<br />
+        <button type="submit">Find</button>
+    </div>
+</form:form>
 </body>
 </html>
