@@ -11,9 +11,9 @@ public class UsersDatabaseImitation {
     private static List<User> listOfUsers = new ArrayList<>();
 
     static {
-        listOfUsers.add(new User("Mila Bezaliuc", "endava"));
-        listOfUsers.add(new User("Petru Covaliov", "endava"));
-        listOfUsers.add(new User("Maxim Ustimov", "endava"));
+        listOfUsers.add(new User("Mila Bezaliuc", "endava", "female"));
+        listOfUsers.add(new User("Petru Covaliov", "endava","male"));
+        listOfUsers.add(new User("Maxim Ustimov", "endava","male"));
     }
 
     public static List<User> getListOfUsers() {

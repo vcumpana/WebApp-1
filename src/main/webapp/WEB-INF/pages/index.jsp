@@ -25,6 +25,10 @@
                 <label>Password</label>
                 <input type="password" name="password" required="required"/>
                 <button type="submit">Login</button>
+
+                <label>Gender</label>
+                <input type="radio" name="gender" value="male"> Male<br>
+                <input type="radio" name="gender" value="female"> Female<br>
             </div>
         </form:form>
     </div>
