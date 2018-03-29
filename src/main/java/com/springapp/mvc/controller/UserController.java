@@ -9,6 +9,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class UserController {
@@ -27,15 +28,30 @@ public class UserController {
 		if (userService.checkUser(user)) {
 			model.addAttribute(user);
 			return "redirect:/allusers";
-		} else {
+		}
+		else {
 			model.addAttribute("error", "Invalid Details");
 			return "error";
 		}
 	}
+
 
 	@RequestMapping(value = "/allusers", method = RequestMethod.GET)
 	public String showAllUsers(ModelMap model) {
 		model.addAttribute("users", userService.getAllUsers());
 		return "welcome";
 	}
+
+
+
+	@RequestMapping(value = "/newwelcome", method = RequestMethod.GET)
+
+	public String showAllGirls(Model model, @RequestParam(value = "idGender") String gender){
+
+		model.addAttribute("users", userService.getUsersDefinedByGender(gender));
+
+		return "welcome";
+
+	}
+
 }

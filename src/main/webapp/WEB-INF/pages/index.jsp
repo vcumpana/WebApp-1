@@ -9,7 +9,7 @@
     </style>
 </head>
 <body>
-<h6>${message}</h6>
+<h4>${message}</h4>
 <div align="center">
     <div style="width: 300px; height: 500px;">
         <form:form method="POST" action="login">
@@ -24,8 +24,25 @@
 
                 <label>Password</label>
                 <input type="password" name="password" required="required"/>
+
+
+                <input type = "radio"
+                       name = "gender"
+                       id = "sizeSmall"
+                       value = "Male"
+                        />
+                <label for = "sizeSmall">MAN</label>
+                <input type = "radio"
+                       name = "gender"
+                       id = "sizeMed"
+                       value = "Female"
+                       checked = "checked"/>
+                <label for = "sizeMed">WOMAN</label>
+
                 <button type="submit">Login</button>
+
             </div>
+
         </form:form>
     </div>
 </div>
