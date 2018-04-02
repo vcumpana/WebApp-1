@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -23,12 +25,10 @@ public class UserService {
     }
 
     public List<User> getUsersDepOnGender(Gender gender){
-        List<User> listOfUsers = new ArrayList<>();
-        for (User user: UsersDatabaseImitation.getListOfUsers()
-             ) {
-            if (user.getGender().equals(gender)) listOfUsers.add(user);
-        }
-        return listOfUsers;
+        return UsersDatabaseImitation.getListOfUsers()
+                .stream()
+                .filter(user -> user.getGender().equals(gender))
+                .collect(Collectors.toList());
     }
     public List<User> getAllUsers() {
         return UsersDatabaseImitation.getListOfUsers();
