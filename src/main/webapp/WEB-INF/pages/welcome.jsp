@@ -15,8 +15,8 @@
 <h1>Hi, Welcome to our super-puper secret page!</h1>
 <br>
 <div class="links">
-    <a href="/welcome?genderId=Female">Girls</a>
-    <a href="/welcome?genderId=Male">Boys</a>
+    <a href="/welcome?genderId=FEMALE">Girls</a>
+    <a href="/welcome?genderId=MALE">Boys</a>
     <a href="/allusers">AllUsers</a>
 </div>
 
