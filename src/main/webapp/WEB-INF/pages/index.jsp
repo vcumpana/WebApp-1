@@ -31,6 +31,10 @@
                 <button type="submit">Login</button>
             </div>
         </form:form>
+        <form action="/1" method="GET">
+            <button type="submit">Registration</button>
+
+        </form>
     </div>
 </div>
 </body>
