@@ -45,6 +45,10 @@ public class UserController {
         return "error";
     }
 
+
+    @RequestMapping(value = "/secret")
+    public String returnSecret(){ return "secret"; }
+
     @RequestMapping(value = "/allusers", method = RequestMethod.GET)
     public String showAllUsers(Model model) {
         model.addAttribute("users", userService.getAllUsers());

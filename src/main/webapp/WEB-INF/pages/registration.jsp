@@ -10,8 +10,13 @@
 <html>
 <head>
     <title>Registration</title>
+    <style type="text/css">
+        <%@include file="../resources/style.css"%>
+    </style>
 </head>
 <body>
+<div align="center">
+<div style="width: 300px; height: 500px;">
 <form:form method="POST" action="/registration">
     <div class="imgcontainer">
         <img src="../resources/incognito.jpg" alt="Avatar" class="avatar">
@@ -32,6 +37,7 @@
         <button type="submit">Register</button>
     </div>
 </form:form>
-
+</div>
+</div>
 </body>
 </html>

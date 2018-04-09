@@ -23,7 +23,7 @@ public class UserDao {
 
     public Optional<User> getUserByName(String username) {
         TypedQuery<User> query = sessionFactory.getCurrentSession()
-                .createQuery("select u from User u where username=:name",
+                .createQuery("select u from User u where username =:name",
                         User.class);
         query.setParameter("name", username);
 
